@@ -3,54 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROJAN KATUWAL - Official Links</title>
+    <title>ROJAN KATUWAL - Official Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * {margin: 0;padding: 0;box-sizing: border-box}
-        body {font-family: Arial, sans-serif;background: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff);min-height: 100vh;padding: 20px;display: flex;justify-content: center;align-items: center}
-        .container {max-width: 680px;width: 100%;background: #fff;border-radius: 30px;overflow: hidden;box-shadow: 0 20px 60px rgba(0,0,0,0.3)}
-        .profile {background: linear-gradient(135deg, #667eea, #764ba2);padding: 50px 30px 40px;text-align: center}
-        .profile img {width: 140px !important;height: 140px !important;border-radius: 50%;border: 5px solid #fff;object-fit: cover;margin: 0 auto 20px;display: block}
-        .profile h1 {color: #fff;font-size: 32px;font-weight: 800;margin-bottom: 8px}
-        .profile p {color: rgba(255,255,255,0.95);font-size: 16px}
-        .content {padding: 30px}
-        .video {position: relative;width: 100%;padding-bottom: 56.25%;border-radius: 20px;overflow: hidden;margin-bottom: 25px;background: #000}
-        .video iframe {position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: none}
-        .links {display: flex;flex-direction: column;gap: 15px}
-        .btn {display: flex;align-items: center;justify-content: center;gap: 12px;padding: 18px 30px;border-radius: 15px;text-decoration: none;font-weight: 700;font-size: 17px;transition: transform 0.2s}
-        .btn:hover {transform: scale(1.02)}
-        .whatsapp {background: #25D366;color: #fff}
-        .youtube {background: #FF0000;color: #fff}
-        .tiktok {background: #f0f0f0;color: #1a1a1a}
-        .footer {text-align: center;padding: 25px;color: #666;font-size: 14px}
+        * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth}
+        body {font-family: 'Segoe UI', Arial, sans-serif; background: #0f172a; color: #fff}
+        
+        /* MENU BAR */
+        .navbar {background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid #334155}
+        .nav-container {max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px}
+        .logo {font-size: 24px; font-weight: 800; background: linear-gradient(135deg, #ff006e, #3a86ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent}
+        .nav-links {display: flex; gap: 25px; list-style: none}
+        .nav-links a {color: #cbd5e1; text-decoration: none; font-weight: 600; transition: 0.3s}
+        .nav-links a:hover {color: #ff006e}
+        .menu-btn {display: none; font-size: 24px; cursor: pointer}
+        
+        /* HERO SECTION */
+        .hero {margin-top: 70px; background: linear-gradient(135deg, #667eea, #764ba2); padding: 80px 20px; text-align: center}
+        .hero img {width: 160px; height: 160px; border-radius: 50%; border: 5px solid #fff; object-fit: cover; margin: 0 auto 20px; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.3)}
+        .hero h1 {font-size: 42px; font-weight: 900; margin-bottom: 10px}
+        .hero p {font-size: 18px; color: rgba(255,255,255,0.9); margin-bottom: 25px}
+        .social-btns {display: flex; gap: 15px; justify-content: center; flex-wrap: wrap}
+        .btn {display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 700; transition: 0.3s}
+        .btn:hover {transform: translateY(-3px)}
+        .whatsapp {background: #25D366; color: #fff}
+        .youtube {background: #FF0000; color: #fff}
+        .tiktok {background: #f0f0f0; color: #1a1a1a}
+        
+        /* SECTIONS */
+        .section {max-width: 1200px; margin: 0 auto; padding: 80px 20px}
+        .section-title {font-size: 36px; font-weight: 800; text-align: center; margin-bottom: 50px; background: linear-gradient(135deg, #ff006e, #3a86ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent}
+        .grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px}
+        .card {background: #1e293b; border-radius: 20px; padding: 25px; border: 1px solid #334155; transition: 0.3s}
+        .card:hover {transform: translateY(-5px); border-color: #ff006e}
+        .card h3 {font-size: 22px; margin-bottom: 12px; color: #ff006e}
+        .card p {color: #94a3b8; line-height: 1.6}
+        .card img {width: 100%; border-radius: 12px; margin-bottom: 15px; height: 200px; object-fit: cover}
+        
+        /* VIDEO */
+        .video-box {position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 20px; overflow: hidden; background: #000; margin-bottom: 25px}
+        .video-box iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none}
+        
+        /* FOOTER */
+        .footer {background: #020617; text-align: center; padding: 40px 20px; border-top: 1px solid #334155}
+        .footer p {color: #64748b}
+        
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .nav-links {display: none; position: absolute; top: 70px; left: 0; width: 100%; background: #0f172a; flex-direction: column; padding: 20px; gap: 15px}
+            .nav-links.active {display: flex}
+            .menu-btn {display: block}
+            .hero h1 {font-size: 32px}
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="profile">
-            <img src="https://raw.githubusercontent.com/rojankatuwal22-byte/rojankatuwal22-byte.github.io/main/1000118973.jpg" alt="Rojan Katuwal">
-            <h1>ROJAN KATUWAL</h1>
-            <p>🇳🇵 Nepali Folk Dance Creator | Dubai 🇦🇪</p>
+    <!-- MENU BAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">ROJAN KATUWAL</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#sports">Sports</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#music">Music</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
         </div>
-        <div class="content">
-            <div class="video">
-                <iframe src="https://www.youtube.com/embed/m-OxdflhuTw" title="Rojan Katuwal Dance" allowfullscreen></iframe>
+    </nav>
+
+    <!-- HOME / HERO -->
+    <section class="hero" id="home">
+        <img src="https://raw.githubusercontent.com/rojankatuwal22-byte/rojankatuwal22-byte.github.io/main/1000118973.jpg" alt="Rojan Katuwal">
+        <h1>ROJAN KATUWAL</h1>
+        <p>🇳🇵 Nepali Folk Dance Creator | Dubai 🇦🇪</p>
+        <div class="social-btns">
+            <a href="https://wa.me/971547983481" class="btn whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Hire Me</a>
+            <a href="https://www.youtube.com/@jhapa22" class="btn youtube" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+            <a href="https://www.tiktok.com/@rojankatuwal99" class="btn tiktok" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+        </div>
+    </section>
+
+    <!-- LATEST VIDEO -->
+    <section class="section">
+        <h2 class="section-title">Latest Dance Video</h2>
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/m-OxdflhuTw" title="Rojan Katuwal Dance" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- NEWS -->
+    <section class="section" id="news">
+        <h2 class="section-title">Latest News</h2>
+        <div class="grid">
+            <div class="card">
+                <h3><i class="fas fa-newspaper"></i> Dubai Event Success</h3>
+                <p>Successfully performed at Al Qasba Dubai Cultural Event. 500+ audience enjoyed Nepali Folk Dance. Book me for your next event!</p>
             </div>
-            <div class="links">
-                <a href="https://wa.me/971547983481" class="btn whatsapp" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp / Hire Me
-                </a>
-                <a href="https://www.youtube.com/@jhapa22" class="btn youtube" target="_blank">
-                    <i class="fab fa-youtube"></i> YouTube @jhapa22
-                </a>
-                <a href="https://www.tiktok.com/@rojankatuwal99" class="btn tiktok" target="_blank">
-                    <i class="fab fa-tiktok"></i> TikTok @rojankatuwal99
-                </a>
+            <div class="card">
+                <h3><i class="fas fa-star"></i> 100K TikTok Family</h3>
+                <p>Thank you for 100K followers on TikTok @rojankatuwal99. New dance challenge coming soon. Stay tuned!</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-trophy"></i> Dance Competition Winner</h3>
+                <p>Won 1st Prize in UAE Nepali Community Dance Competition 2026. Proud to represent Nepal in Dubai.</p>
             </div>
         </div>
-        <div class="footer">
-            © 2026 Rojan Katuwal. All Rights Reserved.
+    </section>
+
+    <!-- SPORTS -->
+    <section class="section" id="sports">
+        <h2 class="section-title">Sports & Fitness</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600" alt="Fitness">
+                <h3><i class="fas fa-dumbbell"></i> Dance Fitness</h3>
+                <p>Dance is my cardio. 2 hours daily practice keeps me fit and energetic for stage performance.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600" alt="Football">
+                <h3><i class="fas fa-futbol"></i> Football Lover</h3>
+                <p>Big fan of Nepali Football. Support Nepal National Team. Also play with friends in Dubai every Friday.</p>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section" id="gallery">
+        <h2 class="section-title">Photo Gallery</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://raw.githubusercontent.com/rojankatuwal22-byte/rojankatuwal22-byte.github.io/main/1000118973.jpg" alt="Stage Performance">
+                <h3>Stage Performance Dubai</h3>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600" alt="Cultural Dress">
+                <h3>Nepali Cultural Dress</h3>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?w=600" alt="Dance Practice">
+                <h3>Dance Practice Session</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- MUSIC -->
+    <section class="section" id="music">
+        <h2 class="section-title">Music & Dance Style</h2>
+        <div class="grid">
+            <div class="card">
+                <h3><i class="fas fa-music"></i> Nepali Folk</h3>
+                <p>Specialist in Jhapa Style Chyabrung Dance, Tamang Selo, and Modern Nepali Remix. Available for all cultural events.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-headphones"></i> Favorite Songs</h3>
+                <p>1. Resham Firiri<br>2. Sali Man Paryo<br>3. Kutu Ma Kutu<br>4. Sirfula Siraima</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-microphone"></i> Live Performance</h3>
+                <p>Book me for Wedding, Birthday, Corporate Event, Nepali New Year. 30 Min to 2 Hour packages available in Dubai, UAE.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+        <h2 class="section-title">Contact & Booking</h2>
+        <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <h3><i class="fas fa-phone"></i> Direct Booking</h3>
+            <p style="font-size: 20px; margin: 20px 0;"><strong>WhatsApp:</strong> +971 54 798 3481</p>
+            <p style="font-size: 18px; margin-bottom: 25px;"><strong>Location:</strong> Dubai, United Arab Emirates</p>
+            <a href="https://wa.me/971547983481" class="btn whatsapp" target="_blank" style="font-size: 18px;">
+                <i class="fab fa-whatsapp"></i> Message on WhatsApp Now
+            </a>
+            <p style="margin-top: 30px; color: #94a3b8;">Available for: Wedding | Corporate Event | TikTok Collab | Dance Workshop</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 ROJAN KATUWAL. All Rights Reserved. | Made with ❤️ in Dubai</p>
+        <p style="margin-top: 10px;">
+            <a href="https://www.youtube.com/@jhapa22" style="color: #94a3b8; margin: 0 10px;">YouTube</a> | 
+            <a href="https://www.tiktok.com/@rojankatuwal99" style="color: #94a3b8; margin: 0 10px;">TikTok</a> | 
+            <a href="https://wa.me/971547983481" style="color: #94a3b8; margin: 0 10px;">WhatsApp</a>
+        </p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
