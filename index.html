@@ -5,11 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="iKz-XRvqx8_yB4S-7_IvD0koD_UoMqsGjhjxn5n8QKw" />
     <title>Bikram Rojan Katuwal - International Fitness Coach Dubai</title>
-    <meta name="description" content="Bikram Rojan Katuwal - Dubai Fitness Coach for Bangladesh, Nepal, Sri Lanka. WhatsApp +971547983481. Online Training AED 99">
-    <meta name="keywords" content="Bikram Rojan Katuwal, Rojan Katuwal, Fitness Dubai, Bangladeshi Coach, Nepali Coach, TikTok @rojankatuwal99">
+    <meta name="description" content="Bikram Rojan Katuwal - Dubai Fitness Coach. WhatsApp +971547983481. Online Training AED 99">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Segoe UI','Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;line-height:1.6}
+        body{font-family:'Segoe UI','Noto Sans Bengali',sans-serif;background:#0a0a0a;color:#fff;line-height:1.6;display:flex;scroll-behavior:smooth}
+        
+        /* SIDEBAR */
+        .sidebar{width:300px;background:#111;height:100vh;position:fixed;left:0;top:0;overflow-y:auto;border-right:3px solid #ff6b00;z-index:999;transition:0.3s}
+        .sidebar::-webkit-scrollbar{width:5px}
+        .sidebar::-webkit-scrollbar-thumb{background:#ff6b00;border-radius:10px}
+        
+        .logo-bar{text-align:center;padding:25px 15px;background:linear-gradient(135deg,#006a4e,#f42a41);border-bottom:3px solid #ff6b00}
+        .logo-bar img{width:80px;height:80px;border-radius:50%;border:3px solid #fff;margin-bottom:10px;object-fit:cover}
+        .logo-bar h2{font-size:1.2rem;margin:5px 0}
+        .logo-bar p{font-size:0.75rem;opacity:0.9}
+        .logo-bar .whatsapp-link{color:#25D366;text-decoration:none;font-size:0.85rem;font-weight:bold;display:block;margin-top:8px}
+        
+        .search-box{padding:15px;border-bottom:1px solid #333}
+        .search-box input{width:100%;padding:10px;background:#2a2a2a;border:1px solid #444;border-radius:8px;color:#fff;font-size:0.9rem}
+        .search-box input:focus{outline:none;border-color:#ff6b00}
+        
+        .menu-list{list-style:none;padding:10px 0}
+        .menu-list li a{display:flex;align-items:center;padding:12px 20px;color:#ccc;text-decoration:none;border-left:4px solid transparent;transition:0.3s;font-size:0.9rem}
+        .menu-list li a:hover,.menu-list li a.active{background:#1f1f1f;border-left:4px solid #ff6b00;color:#ff6b00}
+        .menu-list li a span{margin-right:10px;font-size:1.1rem}
+        .menu-category{padding:18px 20px 8px;color:#ff6b00;font-weight:bold;font-size:0.8rem;text-transform:uppercase;letter-spacing:1px}
+        
+        /* MAIN CONTENT */
+        .main-content{margin-left:300px;width:calc(100% - 300px);transition:0.3s}
         .container{max-width:1100px;margin:0 auto;padding:20px}
         .hero{text-align:center;padding:60px 20px;background:linear-gradient(135deg,#006a4e,#f42a41);border-radius:20px;margin:20px 0}
         .profile-pic{width:150px;height:150px;border-radius:50%;border:5px solid #fff;margin:0 auto 20px;background:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400') center/cover}
@@ -17,13 +40,15 @@
         .tagline{font-size:1.2rem;opacity:0.9}
         .lang-text{background:#1a1a1a;padding:20px;border-radius:15px;margin:25px 0;border:2px solid #25D366}
         .lang-text h3{color:#25D366;margin-bottom:15px;text-align:center;font-size:1.4rem}
-        .lang-text p{font-size:1.2rem;margin:12px 0;padding:10px;background:#2a2a2a;border-radius:8px;line-height:1.8}
-        .btn{display:inline-block;padding:15px 30px;margin:10px 5px;border-radius:50px;text-decoration:none;font-weight:bold;transition:0.3s;cursor:pointer;border:none}
+        .lang-text p{font-size:1.1rem;margin:12px 0;padding:12px;background:#2a2a2a;border-radius:8px;line-height:1.8}
+        .btn{display:inline-block;padding:14px 28px;margin:8px 4px;border-radius:50px;text-decoration:none;font-weight:bold;transition:0.3s;cursor:pointer;border:none;font-size:0.95rem}
         .btn-whatsapp{background:#25D366;color:#fff}
         .btn-whatsapp:hover{transform:scale(1.05);box-shadow:0 5px 20px rgba(37,211,102,0.5)}
         .btn-youtube{background:#FF0000;color:#fff}
         .btn-tiktok{background:#000;color:#fff;border:2px solid #fff}
-        .btn-affiliate{background:#FF9900;color:#000}
+        .btn-facebook{background:#1877F2;color:#fff}
+        .btn-fb-profile{background:#4267B2;color:#fff}
+        .btn:hover{transform:translateY(-2px)}
         .section{background:#1a1a1a;padding:40px 20px;border-radius:20px;margin:20px 0}
         .section h2{text-align:center;font-size:2rem;margin-bottom:30px;color:#ff6b00}
         .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
@@ -32,11 +57,7 @@
         .price{font-size:2.2rem;color:#25D366;font-weight:bold;margin:15px 0}
         .social-links{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin:30px 0}
         .social-links a{width:55px;height:55px;background:#2a2a2a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;text-decoration:none;transition:0.3s}
-        .social-links a:hover{background:#ff6b00;transform:scale(1.1)}
-        .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-        .video-card{background:#2a2a2a;border-radius:15px;overflow:hidden}
-        .video-thumb{width:100%;height:180px;background:#000;display:flex;align-items:center;justify-content:center;font-size:3rem;color:#ff0000}
-        .video-info{padding:15px}
+        .social-links a:hover{background:#ff6b00;transform:scale(1.1) rotate(5deg)}
         footer{text-align:center;padding:40px 20px;color:#666;border-top:1px solid #333;margin-top:40px}
         .badge{background:#ff6b00;color:#000;padding:5px 15px;border-radius:20px;font-size:0.8rem;font-weight:bold;display:inline-block;margin:10px 5px}
         .urgent{background:#ff0000;color:#fff;animation:pulse 2s infinite}
@@ -44,137 +65,204 @@
         .features li{margin:8px 0;list-style:none}
         .features li:before{content:"✅ ";color:#25D366}
         @keyframes pulse{0%{opacity:1}50%{opacity:0.7}100%{opacity:1}}
-        @media(max-width:768px){h1{font-size:2rem}.btn{width:100%;margin:10px 0}.grid{grid-template-columns:1fr}.lang-text p{font-size:1rem}}
+        
+        /* MOBILE */
+        .menu-toggle{display:none;position:fixed;top:15px;left:15px;z-index:1000;background:#ff6b00;color:#000;padding:12px 16px;border:none;border-radius:8px;font-weight:bold;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 10px rgba(0,0,0,0.3)}
+        .overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:998}
+        @media(max-width:768px){
+            .sidebar{left:-300px}
+            .sidebar.active{left:0}
+            .main-content{margin-left:0;width:100%}
+            .menu-toggle{display:block}
+            .overlay.active{display:block}
+            h1{font-size:2rem}
+            .btn{width:100%;margin:8px 0}
+            .grid{grid-template-columns:1fr}
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="hero">
-            <div class="profile-pic"></div>
-            <div class="badge">🇧🇩 BANGLADESH</div><div class="badge">🇳🇵 NEPAL</div><div class="badge">🇱🇰 SRI LANKA</div><div class="badge">🇦🇪 DUBAI</div>
-            <h1>BIKRAM ROJAN KATUWAL</h1>
-            <p class="tagline">International Fitness Coach | Dubai, UAE | TikTok @rojankatuwal99</p>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo-bar">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200" alt="Rojan">
+            <h2>💪 ROJAN FITNESS</h2>
+            <p>International Coach Dubai</p>
+            <a href="https://wa.me/971547983481" class="whatsapp-link">📱 +971547983481</a>
+        </div>
+        
+        <div class="search-box">
+            <input type="text" id="menuSearch" placeholder="🔍 Search Menu..." onkeyup="searchMenu()">
+        </div>
+
+        <ul class="menu-list" id="menuList">
+            <li><a href="#home" class="active"><span>🏠</span> Home</a></li>
+            <li><a href="#coaching"><span>💪</span> Online Coaching</a></li>
+            <li><a href="#contact"><span>📱</span> Contact Me</a></li>
             
-            <div class="lang-text">
-                <h3>🙏 ভাই, সাপোর্ট করুন 👇</h3>
-                <p><strong>🇧🇩 বাংলা:</strong> আমি আমার ওয়েবসাইট তৈরি করেছি, অনুগ্রহ করে ভিজিট করুন। আমি সহযোগিতার জন্য প্রস্তুত। ভালো লাগলে 1টা শেয়ার করুন।</p>
-                <p><strong>🇳🇵 नेपाली:</strong> मेरो website बनाको छु visit गरिदिनु होला। सहकार्यको लागि तयार छु। मन परे 1 share गरिदिनु होला।</p>
-                <p><strong>🇱🇰 தமிழ்:</strong> நான் எனது வலைத்தளத்தை உருவாக்கியுள்ளேன், தயவுசெய்து பார்வையிடவும்। நான் ஒத்துழைப்புக்கு தயாராக இருக்கிறேன்। பிடித்திருந்தால் 1 ஷேர் செய்யவும்।</p>
-                <p><strong>🇬🇧 English:</strong> I have created my website, please visit it. I am ready for collaboration. If you like it, share 1 time.</p>
-            </div>
-
-            <div class="badge urgent">🔥 WhatsApp +971547983481 - ONLY 3 SLOTS LEFT</div><br>
-            <a href="https://wa.me/971547983481?text=Hi%20Rojan%20Bhai,%20Website%20dekhlam.%20Coaching%20chaiyo" class="btn btn-whatsapp">💬 WhatsApp মেসেজ</a>
-            <a href="https://www.youtube.com/@jhapa22" class="btn btn-youtube">▶️ YouTube @jhapa22</a>
-            <a href="https://www.tiktok.com/@rojankatuwal99" class="btn btn-tiktok">🎵 TikTok Follow</a>
-        </div>
-
-        <div class="section">
-            <h2>💪 ONLINE COACHING PLANS</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>🥉 30-DAY STARTER</h3>
-                    <div class="price">AED 99</div>
-                    <ul class="features">
-                        <li>Custom Workout Plan</li>
-                        <li>Diet Chart - Bengali/Nepali Food</li>
-                        <li>WhatsApp Support</li>
-                        <li>Weekly Check-in</li>
-                    </ul>
-                    <a href="https://wa.me/971547983481?text=I%20want%20STARTER%20PLAN%20AED99" class="btn btn-whatsapp">Join Now</a>
-                </div>
-                <div class="card" style="border-color:#ff6b00;transform:scale(1.05)">
-                    <div class="badge">🔥 MOST POPULAR</div>
-                    <h3>🥈 90-DAY PRO</h3>
-                    <div class="price">AED 199</div>
-                    <ul class="features">
-                        <li>Everything in Starter</li>
-                        <li>Personal Meal Plan</li>
-                        <li>Video Form Check</li>
-                        <li>24/7 WhatsApp Access</li>
-                        <li>Monthly Video Call</li>
-                    </ul>
-                    <a href="https://wa.me/971547983481?text=I%20want%20PRO%20PLAN%20AED199" class="btn btn-whatsapp">Join Now</a>
-                </div>
-                <div class="card">
-                    <h3>🥇 VIP TRANSFORMATION</h3>
-                    <div class="price">AED 399</div>
-                    <ul class="features">
-                        <li>Everything in Pro</li>
-                        <li>1-on-1 Live Training</li>
-                        <li>Daily Motivation</li>
-                        <li>Supplement Guide</li>
-                        <li>100% Result Guarantee</li>
-                    </ul>
-                    <a href="https://wa.me/971547983481?text=I%20want%20VIP%20PLAN%20AED399" class="btn btn-whatsapp">Join Now</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>💊 RECOMMENDED SUPPLEMENTS</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Whey Protein</h3>
-                    <p>For Muscle Recovery & Growth</p>
-                    <a href="https://www.amazon.ae" target="_blank" class="btn btn-affiliate">🛒 Best Price</a>
-                </div>
-                <div class="card">
-                    <h3>Creatine + Pre-Workout</h3>
-                    <p>Boost Strength & Energy</p>
-                    <a href="https://www.noon.com" target="_blank" class="btn btn-affiliate">🛒 Buy on Noon</a>
-                </div>
-                <div class="card">
-                    <h3>Home Gym Kit</h3>
-                    <p>Dumbbells, Bands, Mat</p>
-                    <a href="https://www.amazon.ae" target="_blank" class="btn btn-affiliate">🛒 Shop Now</a>
-                </div>
-            <p style="text-align:center;margin-top:20px;font-size:0.9rem;color:#888">*Affiliate: I earn commission at no extra cost to you</p>
-        </div>
-
-        <div class="section">
-            <h2>🎥 FREE TRAINING VIDEOS</h2>
-            <div class="video-grid">
-                <div class="video-card">
-                    <div class="video-thumb">▶️</div>
-                    <div class="video-info">
-                        <h4>Home Workout - No Equipment</h4>
-                        <a href="https://www.youtube.com/@jhapa22" target="_blank" class="btn btn-youtube">Watch Free</a>
-                    </div>
-                <div class="video-card">
-                    <div class="video-thumb">▶️</div>
-                    <div class="video-info">
-                        <h4>Cheap Protein Diet Dubai</h4>
-                        <a href="https://www.youtube.com/@jhapa22" target="_blank" class="btn btn-youtube">Watch Free</a>
-                    </div>
-                </div>
-                <div class="video-card">
-                    <div class="video-thumb">▶️</div>
-                    <div class="video-info">
-                        <h4>6 Pack Abs in 30 Days</h4>
-                        <a href="https://www.youtube.com/@jhapa22" target="_blank" class="btn btn-youtube">Watch Free</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>📱 CONNECT WITH ME</h2>
-            <div class="social-links">
-                <a href="https://www.youtube.com/@jhapa22" target="_blank">▶️</a>
-                <a href="https://www.tiktok.com/@rojankatuwal99" target="_blank">🎵</a>
-                <a href="https://www.instagram.com/" target="_blank">📷</a>
-                <a href="https://www.facebook.com/" target="_blank">👍</a>
-                <a href="https://wa.me/971547983481" target="_blank">💬</a>
-            </div>
-            <p style="text-align:center;font-size:1.1rem">TikTok: @rojankatuwal99 | YouTube: @jhapa22 | WhatsApp: +971547983481</p>
-        </div>
-
-        <footer>
-            <p><strong>© 2026 Bikram Rojan Katuwal Fitness International</strong></p>
-            <p>Proudly Serving: Bangladesh 🇧🇩 | Nepal 🇳🇵 | Sri Lanka 🇱🇰 | UAE 🇦🇪</p>
-            <p>WhatsApp: +971547983481 | TikTok: @rojankatuwal99 | YouTube: @jhapa22</p>
-        </footer>
+            <div class="menu-category">00: Nepali News</div>
+            <li><a href="https://www.bbc.com/nepali" target="_blank"><span>📰</span> BBC Nepali</a></li>
+            <li><a href="https://ekantipur.com" target="_blank"><span>📰</span> Ekantipur</a></li>
+            <li><a href="https://www.onlinekhabar.com" target="_blank"><span>📰</span> Online Khabar</a></li>
+            <li><a href="https://www.setopati.com" target="_blank"><span>📰</span> Setopati</a></li>
+            <li><a href="https://ratopati.com" target="_blank"><span>📰</span> Ratopati</a></li>
+            
+            <div class="menu-category">01: Sports Live</div>
+            <li><a href="https://www.cricbuzz.com" target="_blank"><span>🏏</span> Cricbuzz Live</a></li>
+            <li><a href="https://www.espn.com" target="_blank"><span>⚽</span> ESPN Sports</a></li>
+            <li><a href="https://www.sonyliv.com" target="_blank"><span>📺</span> Sony LIV Sports</a></li>
+            <li><a href="https://www.hotstar.com/sports" target="_blank"><span>🏆</span> Hotstar Sports</a></li>
+            
+            <div class="menu-category">02: Movies</div>
+            <li><a href="https://www.netflix.com" target="_blank"><span>🎬</span> Netflix</a></li>
+            <li><a href="https://www.primevideo.com" target="_blank"><span>🎥</span> Amazon Prime</a></li>
+            <li><a href="https://www.youtube.com" target="_blank"><span>▶️</span> YouTube Movies</a></li>
+            
+            <div class="menu-category">03: Nepali Social</div>
+            <li><a href="https://hamrogroup.com" target="_blank"><span>🇳🇵</span> Hamro Group</a></li>
+            <li><a href="https://www.tiktok.com" target="_blank"><span>🎵</span> TikTok Nepal</a></li>
+            <li><a href="https://www.facebook.com/share/18SLR7pDsu/" target="_blank"><span>👍</span> My FB Page</a></li>
+            
+            <div class="menu-category">04: FM Radio</div>
+            <li><a href="https://www.radiokantipur.com" target="_blank"><span>📻</span> Radio Kantipur 96.1</a></li>
+            <li><a href="https://ujyaaloonline.com/radio" target="_blank"><span>📻</span> Ujyaalo 90</a></li>
+            <li><a href="https://www.hitsfm.com.np" target="_blank"><span>📻</span> Hits FM 91.2</a></li>
+            <li><a href="https://www.imagefm.com.np" target="_blank"><span>📻</span> Image FM 97.9</a></li>
+            
+            <div class="menu-category">05: Online Shopping</div>
+            <li><a href="https://www.daraz.com.np" target="_blank"><span>🛒</span> Daraz Nepal</a></li>
+            <li><a href="https://www.sastodeal.com" target="_blank"><span>🛍️</span> SastoDeal</a></li>
+            <li><a href="https://www.hamrobazaar.com" target="_blank"><span>🏪</span> HamroBazar</a></li>
+            <li><a href="https://www.amazon.ae" target="_blank"><span>📦</span> Amazon UAE</a></li>
+            
+            <div class="menu-category">06: Photo Gallery</div>
+            <li><a href="#gallery"><span>📸</span> Fitness Gallery</a></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><span>📷</span> Instagram</a></li>
+            
+            <div class="menu-category">07: Video Gallery</div>
+            <li><a href="https://www.youtube.com/@jhapa22" target="_blank"><span>🎬</span> My YouTube</a></li>
+            <li><a href="https://www.tiktok.com/@rojankatuwal99" target="_blank"><span>🎵</span> TikTok Videos</a></li>
+        </ul>
     </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <div class="container">
+            <div class="hero" id="home">
+                <div class="profile-pic"></div>
+                <div class="badge">🇧🇩 BANGLADESH</div><div class="badge">🇳🇵 NEPAL</div><div class="badge">🇱🇰 SRI LANKA</div><div class="badge">🇦🇪 DUBAI</div>
+                <h1>BIKRAM ROJAN KATUWAL</h1>
+                <p class="tagline">International Fitness Coach | Dubai, UAE | TikTok @rojankatuwal99</p>
+                
+                <div class="lang-text">
+                    <h3>🙏 ভাই, সাপোর্ট করুন 👇</h3>
+                    <p><strong>🇧🇩 বাংলা:</strong> আমি আমার ওয়েবসাইট তৈরি করেছি, অনুগ্রহ করে ভিজিট করুন। আমি সহযোগিতার জন্য প্রস্তুত। ভালো লাগলে 1টা শেয়ার করুন।</p>
+                    <p><strong>🇳🇵 नेपाली:</strong> मेरो website बनाको छु visit गरिदिनु होला। सहकार्यको लागि तयार छु। मन परे 1 share गरिदिनु होला।</p>
+                    <p><strong>🇱🇰 தமிழ்:</strong> நான் எனது வலைத்தளத்தை உருவாக்கியுள்ளேன், தயவுசெய்து பார்வையிடவும்। நான் ஒத்துழைப்புக்கு தயாராக இருக்கிறேன்। பிடித்திருந்தால் 1 ஷேர் செய்யவும்।</p>
+                    <p><strong>🇬🇧 English:</strong> I have created my website, please visit it. I am ready for collaboration. If you like it, share 1 time.</p>
+                </div>
+
+                <div class="badge urgent">🔥 WhatsApp +971547983481 - ONLY 3 SLOTS LEFT</div><br>
+                <a href="https://wa.me/971547983481?text=Hi%20Rojan%20Bhai,%20Website%20dekhlam.%20Coaching%20chaiyo" class="btn btn-whatsapp">💬 WhatsApp মেসেজ</a>
+                <a href="https://www.youtube.com/@jhapa22" class="btn btn-youtube">▶️ YouTube @jhapa22</a>
+                <a href="https://www.tiktok.com/@rojankatuwal99" class="btn btn-tiktok">🎵 TikTok Follow</a>
+                <a href="https://www.facebook.com/share/18SLR7pDsu/" class="btn btn-facebook">👍 FB Page</a>
+                <a href="https://www.facebook.com/share/1DvH4fqbne/" class="btn btn-fb-profile">👤 FB Profile</a>
+            </div>
+
+            <div class="section" id="coaching">
+                <h2>💪 ONLINE COACHING PLANS</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>🥉 30-DAY STARTER</h3>
+                        <div class="price">AED 99</div>
+                        <ul class="features">
+                            <li>Custom Workout Plan</li>
+                            <li>Diet Chart - Bengali/Nepali Food</li>
+                            <li>WhatsApp Support</li>
+                            <li>Weekly Check-in</li>
+                        </ul>
+                        <a href="https://wa.me/971547983481?text=I%20want%20STARTER%20PLAN%20AED99" class="btn btn-whatsapp">Join Now</a>
+                    </div>
+                    <div class="card" style="border-color:#ff6b00;transform:scale(1.05)">
+                        <div class="badge">🔥 MOST POPULAR</div>
+                        <h3>🥈 90-DAY PRO</h3>
+                        <div class="price">AED 199</div>
+                        <ul class="features">
+                            <li>Everything in Starter</li>
+                            <li>Personal Meal Plan</li>
+                            <li>Video Form Check</li>
+                            <li>24/7 WhatsApp Access</li>
+                            <li>Monthly Video Call</li>
+                        </ul>
+                        <a href="https://wa.me/971547983481?text=I%20want%20PRO%20PLAN%20AED199" class="btn btn-whatsapp">Join Now</a>
+                    </div>
+                    <div class="card">
+                        <h3>🥇 VIP TRANSFORMATION</h3>
+                        <div class="price">AED 399</div>
+                        <ul class="features">
+                            <li>Everything in Pro</li>
+                            <li>1-on-1 Live Training</li>
+                            <li>Daily Motivation</li>
+                            <li>Supplement Guide</li>
+                            <li>100% Result Guarantee</li>
+                        </ul>
+                        <a href="https://wa.me/971547983481?text=I%20want%20VIP%20PLAN%20AED399" class="btn btn-whatsapp">Join Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="contact">
+                <h2>📱 CONNECT WITH ME</h2>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@jhapa22" target="_blank">▶️</a>
+                    <a href="https://www.tiktok.com/@rojankatuwal99" target="_blank">🎵</a>
+                    <a href="https://www.instagram.com/" target="_blank">📷</a>
+                    <a href="https://www.facebook.com/share/18SLR7pDsu/" target="_blank">👍</a>
+                    <a href="https://www.facebook.com/share/1DvH4fqbne/" target="_blank">👤</a>
+                    <a href="https://wa.me/971547983481" target="_blank">💬</a>
+                </div>
+                <p style="text-align:center;font-size:1.1rem;line-height:2">
+                    <strong>Facebook Page:</strong> <a href="https://www.facebook.com/share/18SLR7pDsu/" style="color:#1877F2">Bikram Rojan Fitness</a><br>
+                    <strong>Facebook Profile:</strong> <a href="https://www.facebook.com/share/1DvH4fqbne/" style="color:#1877F2">Bikram Rojan</a><br>
+                    <strong>TikTok:</strong> @rojankatuwal99 | <strong>YouTube:</strong> @jhapa22<br>
+                    <strong>WhatsApp:</strong> +971547983481
+                </p>
+            </div>
+
+            <footer>
+                <p><strong>© 2026 Bikram Rojan Katuwal Fitness International</strong></p>
+                <p>Proudly Serving: Bangladesh 🇧🇩 | Nepal 🇳🇵 | Sri Lanka 🇱🇰 | UAE 🇦🇪</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+        
+        function searchMenu() {
+            let input = document.getElementById('menuSearch').value.toLowerCase();
+            let items = document.querySelectorAll('#menuList li');
+            items.forEach(item => {
+                let text = item.textContent.toLowerCase();
+                item.style.display = text.includes(input) ? '' : 'none';
+            });
+        }
+        
+        // Close menu when clicking a link on mobile
+        document.querySelectorAll('.menu-list a').forEach(link => {
+            link.addEventListener('click', () => {
+                if(window.innerWidth <= 768) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
