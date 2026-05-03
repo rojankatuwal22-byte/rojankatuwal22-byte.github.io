@@ -58,7 +58,8 @@
         .social-links a{width:60px;height:60px;background:#2a2a2a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;text-decoration:none;transition:0.3s;border:2px solid #333}
         .social-links a:hover{background:#ff6b00;transform:scale(1.15) rotate(10deg);border-color:#ff6b00}
         footer{text-align:center;padding:50px 20px;color:#888;border-top:1px solid #333;margin-top:50px}
-        .badge{background:#ff6b00;color:#000;padding:6px 18px;border-radius:25px;font-size:0.85rem;font-weight:700;display:inline-block;margin:12px 6px}
+        .badge{background:#ff6b00;color:#000;padding:6px 18px;border-radius:25px;font-size:0.85rem;font-weight:700;display:inline-block;margin:12px 6px;cursor:pointer;transition:0.3s;text-decoration:none}
+        .badge:hover{transform:scale(1.1);box-shadow:0 5px 15px rgba(255,107,0,0.5)}
         .urgent{background:#ff0000;color:#fff;animation:pulse 2s infinite}
         .features{text-align:left;margin:18px 0}
         .features li{margin:10px 0;list-style:none;font-size:0.95rem}
@@ -66,6 +67,22 @@
         @keyframes pulse{0%{opacity:1}50%{opacity:0.7}100%{opacity:1}}
         .menu-toggle{display:none;position:fixed;top:20px;left:20px;z-index:1000;background:#ff6b00;color:#000;padding:14px 18px;border:none;border-radius:12px;font-weight:bold;cursor:pointer;font-size:1.3rem;box-shadow:0 6px 20px rgba(255,107,0,0.4)}
         .overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:998;backdrop-filter:blur(5px)}
+        
+        /* Country Modal Popup */
+        .country-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:9999;backdrop-filter:blur(10px);overflow-y:auto}
+        .country-modal.active{display:flex;align-items:center;justify-content:center;padding:20px}
+        .country-content{background:#1a1a1a;border-radius:25px;padding:40px;max-width:600px;width:100%;border:3px solid #ff6b00;position:relative;max-height:90vh;overflow-y:auto}
+        .country-content::-webkit-scrollbar{width:8px}
+        .country-content::-webkit-scrollbar-thumb{background:#ff6b00;border-radius:10px}
+        .close-modal{position:absolute;top:15px;right:20px;font-size:2rem;cursor:pointer;color:#ff6b00;font-weight:bold}
+        .country-content h2{text-align:center;color:#ff6b00;font-size:2rem;margin-bottom:25px}
+        .country-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
+        .country-link{display:block;padding:15px;background:#2a2a2a;border-radius:12px;text-decoration:none;color:#fff;border:2px solid #333;transition:0.3s}
+        .country-link:hover{border-color:#ff6b00;transform:translateY(-3px);background:#333}
+        .country-link span{font-size:1.3rem;margin-right:10px}
+        .country-link h4{color:#ff6b00;margin-bottom:5px;font-size:1rem}
+        .country-link p{font-size:0.85rem;opacity:0.8}
+        
         @media(max-width:768px){
             .sidebar{left:-300px;width:280px}
             .sidebar.active{left:0}
@@ -80,12 +97,138 @@
             .cover-text h3{font-size:2rem}
             .cover-text p{font-size:1rem}
             .container{padding:15px}
+            .country-content{padding:25px}
+            .country-links{grid-template-columns:1fr}
         }
     </style>
 </head>
 <body>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    
+    <!-- Country Modals -->
+    <div class="country-modal" id="bangladeshModal">
+        <div class="country-content">
+            <span class="close-modal" onclick="closeModal('bangladeshModal')">×</span>
+            <h2>🇧🇩 Bangladesh Links</h2>
+            <div class="country-links">
+                <a href="https://www.prothomalo.com" target="_blank" class="country-link">
+                    <span>📰</span><h4>Prothom Alo</h4><p>Bangladesh #1 News</p>
+                </a>
+                <a href="https://www.bdnews24.com" target="_blank" class="country-link">
+                    <span>📰</span><h4>BD News24</h4><p>24/7 Breaking News</p>
+                </a>
+                <a href="https://www.jugantor.com" target="_blank" class="country-link">
+                    <span>📰</span><h4>Jugantor</h4><p>Popular Daily</p>
+                </a>
+                <a href="https://www.somoynews.tv" target="_blank" class="country-link">
+                    <span>📺</span><h4>Somoy TV</h4><p>Live News Channel</p>
+                </a>
+                <a href="https://www.jamuna.tv" target="_blank" class="country-link">
+                    <span>📺</span><h4>Jamuna TV</h4><p>Bangla TV Live</p>
+                </a>
+                <a href="https://www.channel24bd.tv" target="_blank" class="country-link">
+                    <span>📺</span><h4>Channel 24</h4><p>News & Entertainment</p>
+                </a>
+                <a href="https://www.daraz.com.bd" target="_blank" class="country-link">
+                    <span>🛒</span><h4>Daraz BD</h4><p>Online Shopping</p>
+                </a>
+                <a href="https://www.bangladesh.fm" target="_blank" class="country-link">
+                    <span>📻</span><h4>Bangladesh FM</h4><p>Radio Stations</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="country-modal" id="nepalModal">
+        <div class="country-content">
+            <span class="close-modal" onclick="closeModal('nepalModal')">×</span>
+            <h2>🇳🇵 Nepal Links</h2>
+            <div class="country-links">
+                <a href="https://www.bbc.com/nepali" target="_blank" class="country-link">
+                    <span>📰</span><h4>BBC Nepali</h4><p>International News</p>
+                </a>
+                <a href="https://ekantipur.com" target="_blank" class="country-link">
+                    <span>📰</span><h4>Ekantipur</h4><p>Kantipur News</p>
+                </a>
+                <a href="https://www.onlinekhabar.com" target="_blank" class="country-link">
+                    <span>📰</span><h4>Online Khabar</h4><p>Top News Portal</p>
+                </a>
+                <a href="https://www.setopati.com" target="_blank" class="country-link">
+                    <span>📰</span><h4>Setopati</h4><p>Digital News</p>
+                </a>
+                <a href="https://www.kantipurtv.com" target="_blank" class="country-link">
+                    <span>📺</span><h4>Kantipur TV</h4><p>Live TV Nepal</p>
+                </a>
+                <a href="https://www.imagechannel.com.np" target="_blank" class="country-link">
+                    <span>📺</span><h4>Image Channel</h4><p>Nepali TV Live</p>
+                </a>
+                <a href="https://www.radiokantipur.com" target="_blank" class="country-link">
+                    <span>📻</span><h4>Radio Kantipur 96.1</h4><p>FM Live</p>
+                </a>
+                <a href="https://ujyaaloonline.com/radio" target="_blank" class="country-link">
+                    <span>📻</span><h4>Ujyaalo 90</h4><p>News Radio</p>
+                </a>
+                <a href="https://www.daraz.com.np" target="_blank" class="country-link">
+                    <span>🛒</span><h4>Daraz Nepal</h4><p>Online Shopping</p>
+                </a>
+                <a href="https://www.hamrobazaar.com" target="_blank" class="country-link">
+                    <span>🏪</span><h4>HamroBazar</h4><p>Classifieds Nepal</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="country-modal" id="srilankaModal">
+        <div class="country-content">
+            <span class="close-modal" onclick="closeModal('srilankaModal')">×</span>
+            <h2>🇱🇰 Sri Lanka Links</h2>
+            <div class="country-links">
+                <a href="https://www.dailymirror.lk" target="_blank" class="country-link">
+                    <span>📰</span><h4>Daily Mirror</h4><p>English News</p>
+                </a>
+                <a href="https://www.adaderana.lk" target="_blank" class="country-link">
+                    <span>📰</span><h4>Ada Derana</h4><p>Sinhala News</p>
+                </a>
+                <a href="https://www.hirunews.lk" target="_blank" class="country-link">
+                    <span>📺</span><h4>Hiru News</h4><p>TV Live</p>
+                </a>
+                <a href="https://www.rupavahini.lk" target="_blank" class="country-link">
+                    <span>📺</span><h4>Rupavahini</h4><p>National TV</p>
+                </a>
+                <a href="https://www.daraz.lk" target="_blank" class="country-link">
+                    <span>🛒</span><h4>Daraz LK</h4><p>Online Shopping</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="country-modal" id="dubaiModal">
+        <div class="country-content">
+            <span class="close-modal" onclick="closeModal('dubaiModal')">×</span>
+            <h2>🇦🇪 Dubai / UAE Links</h2>
+            <div class="country-links">
+                <a href="https://gulfnews.com" target="_blank" class="country-link">
+                    <span>📰</span><h4>Gulf News</h4><p>UAE #1 News</p>
+                </a>
+                <a href="https://www.khaleejtimes.com" target="_blank" class="country-link">
+                    <span>📰</span><h4>Khaleej Times</h4><p>Dubai News</p>
+                </a>
+                <a href="https://www.dubaieye1038.com" target="_blank" class="country-link">
+                    <span>📻</span><h4>Dubai Eye 103.8</h4><p>Radio FM</p>
+                </a>
+                <a href="https://www.amazon.ae" target="_blank" class="country-link">
+                    <span>🛒</span><h4>Amazon UAE</h4><p>Online Shopping</p>
+                </a>
+                <a href="https://www.noon.com/uae-en" target="_blank" class="country-link">
+                    <span>🛍️</span><h4>Noon</h4><p>UAE Shopping</p>
+                </a>
+                <a href="https://www.dubaipolice.gov.ae" target="_blank" class="country-link">
+                    <span>👮</span><h4>Dubai Police</h4><p>Official Site</p>
+                </a>
+            </div>
+        </div>
+    </div>
     
     <div class="sidebar" id="sidebar">
         <div class="logo-bar">
@@ -151,9 +294,21 @@
 
     <div class="main-content">
         <div class="container">
+            <div class="cover-photo">
+                <div class="cover-overlay">
+                    <div class="cover-text">
+                        <h3>🌺 सगरमाथा + लाली गुराँस</h3>
+                        <p>Nepal's Pride | Proud Nepali Creator</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="hero" id="home">
                 <div class="profile-pic"></div>
-                <div class="badge">🇧🇩 BANGLADESH</div><div class="badge">🇳🇵 NEPAL</div><div class="badge">🇱🇰 SRI LANKA</div><div class="badge">🇦🇪 DUBAI</div>
+                <div class="badge" onclick="openModal('bangladeshModal')">🇧🇩 BANGLADESH</div>
+                <div class="badge" onclick="openModal('nepalModal')">🇳🇵 NEPAL</div>
+                <div class="badge" onclick="openModal('srilankaModal')">🇱🇰 SRI LANKA</div>
+                <div class="badge" onclick="openModal('dubaiModal')">🇦🇪 DUBAI</div>
                 <h1>BIKRAM ROJAN KATUWAL</h1>
                 <p class="tagline">International Creator | Dubai, UAE | TikTok @rojankatuwal99</p>
                 
@@ -242,26 +397,4 @@
 
     <script>
         function toggleMenu() {
-            document.getElementById('sidebar').classList.toggle('active');
-            document.getElementById('overlay').classList.toggle('active');
-        }
-        
-        function searchMenu() {
-            let input = document.getElementById('menuSearch').value.toLowerCase();
-            let items = document.querySelectorAll('#menuList li');
-            items.forEach(item => {
-                let text = item.textContent.toLowerCase();
-                item.style.display = text.includes(input) ? '' : 'none';
-            });
-        }
-        
-        document.querySelectorAll('.menu-list a').forEach(link => {
-            link.addEventListener('click', () => {
-                if(window.innerWidth <= 768) {
-                    toggleMenu();
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+            document.get
