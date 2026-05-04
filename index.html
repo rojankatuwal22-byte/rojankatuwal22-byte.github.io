@@ -3,159 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rojan Fitness Dubai - AED 99 Coaching</title>
-    
+    <title>Rojan Katuwal - Video Creator Dubai</title>
     <style>
-        /* ===== 1. BASIC DESIGN - छुनु पर्दैन ===== */
+        /* ===== BASIC DESIGN ===== */
         *{margin:0;padding:0;box-sizing:border-box}
-        body{background:#0f0f0f;color:#fff;font-family:Arial,sans-serif;line-height:1.6}
-        .container{max-width:900px;margin:0 auto;padding:20px}
+        body{
+            font-family:Arial,sans-serif;
+            background:linear-gradient(135deg,#667eea,#764ba2);
+            min-height:100vh;
+            padding:20px;
+            color:#fff;
+            text-align:center;
+        }
+        .container{max-width:400px;margin:0 auto}
         
-        /* ===== 2. PROFILE CARD - नाम/ठाउँ Change गर्न यहाँ ===== */
-        .profile{text-align:center;padding:40px 20px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:20px;margin:20px 0}
-        .name{font-size:2.2rem;font-weight:800;margin-bottom:10px}
-        .title{font-size:1.2rem;opacity:0.9;margin-bottom:15px}
-        .stats{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin:20px 0}
-        .stat{background:rgba(255,255,255,0.2);padding:8px 15px;border-radius:20px;font-weight:600}
+        /* ===== PROFILE ===== */
+        .pic{
+            width:120px;height:120px;
+            border-radius:50%;
+            border:4px solid #fff;
+            margin:20px auto;
+            object-fit:cover;
+        }
+        h1{font-size:2rem;margin:10px 0}
+        .bio{opacity:0.9;margin-bottom:30px}
         
-        /* ===== 3. VIDEO BOX - DELETE गर्न यो पूरा Section हटाउ ===== */
-        /* >>> VIDEO SECTION START - Delete From Here <<< */
-        .video{margin:30px 0;border-radius:15px;overflow:hidden;border:3px solid #ff6b35}
-        .video iframe{width:100%;height:315px;border:none;display:block}
-        /* >>> VIDEO SECTION END - Delete Till Here <<< */
+        /* ===== BUTTONS ===== */
+        .btn{
+            display:block;
+            background:#fff;
+            color:#764ba2;
+            padding:15px;
+            margin:12px 0;
+            border-radius:50px;
+            text-decoration:none;
+            font-weight:bold;
+            font-size:17px;
+        }
+        .btn-whatsapp{background:#25d366;color:white}
+        .btn-youtube{background:#ff0000;color:white}
+        .btn-tiktok{background:#000;color:white}
         
-        /* ===== 4. STORE - Price/Product Change गर्न यहाँ ===== */
-        .store{background:#1a1a1a;padding:30px;border-radius:15px;margin:30px 0;border:2px solid #ff6b35}
-        .store-title{color:#ff6b35;text-align:center;font-size:1.8rem;font-weight:800;margin-bottom:25px}
-        .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-        .product{background:#2a2a2a;padding:25px;border-radius:12px;text-align:center;border:2px solid #444}
-        .product h3{font-size:1.3rem;margin-bottom:10px}
-        .price{color:#ff6b35;font-size:1.8rem;font-weight:800;margin:15px 0}
-        .old-price{text-decoration:line-through;opacity:0.6;font-size:1rem;margin-left:8px}
-        .btn{display:inline-block;background:#25d366;color:white;padding:12px 30px;border-radius:50px;text-decoration:none;font-weight:700;margin-top:10px}
-        .btn:hover{background:#1da851}
-        
-        /* ===== 5. FREE GIFT - Lead Magnet ===== */
-        .gift{background:#2a2a2a;padding:30px;border-radius:15px;margin:30px 0;text-align:center;border:2px dashed #ff6b35}
-        .gift h3{color:#ff6b35;font-size:1.5rem;margin-bottom:10px}
-        .gift-btn{background:#ff6b35;color:white;padding:14px 35px;border-radius:50px;text-decoration:none;font-weight:800;display:inline-block;margin-top:15px}
-        
-        /* ===== 6. CONTACT BUTTONS ===== */
-        .contact{text-align:center;margin:30px 0}
-        .contact a{display:inline-block;margin:10px;padding:14px 35px;border-radius:50px;text-decoration:none;font-weight:700}
-        .whatsapp{background:#25d366;color:white}
-        .youtube{background:#ff0000;color:white}
-        
-        /* ===== 7. MOBILE मा राम्रो देखाउन ===== */
-        @media(max-width:600px){.name{font-size:1.8rem}.products{grid-template-columns:1fr}}
+        /* ===== VIDEO हटाउनु परे यो पूरा Delete गर ===== */
+        /* VIDEO START */
+        .video{margin:25px 0;border-radius:15px;overflow:hidden}
+        .video iframe{width:100%;height:200px;border:0}
+        /* VIDEO END */
     </style>
 </head>
 <body>
     <div class="container">
         
-        <!-- ================================================== -->
-        <!-- SECTION 1: PROFILE - नाम, ठाउँ, अनुभव Edit गर यहाँ -->
-        <!-- ================================================== -->
-        <div class="profile">
-            <!-- नाम Change गर्नु परे यहाँ Edit गर -->
-            <h1 class="name">Bikram Rojan Katuwal</h1>
-            
-            <!-- Title Change गर्नु परे यहाँ Edit गर -->
-            <p class="title">Certified Fitness Coach | Dubai 🇦🇪</p>
-            
-            <!-- Stats Change गर्नु परे यहाँ Edit गर -->
-            <div class="stats">
-                <span class="stat">📍 Dubai, UAE</span>
-                <span class="stat">▶️ 10M+ Views</span>
-                <span class="stat">💪 5+ Years Exp</span>
-            </div>
-            
-            <!-- Description Change गर्नु परे यहाँ Edit गर -->
-            <p style="margin-top:20px;opacity:0.9;">
-                Helping Nepali, Indian, Bangladeshi brothers transform their body. 
-                Home workout + Diet plan. No gym needed!
-            </p>
-        </div>
-        <!-- ===== PROFILE SECTION END ===== -->
+        <!-- ===== PROFILE - नाम Change गर्न यहाँ ===== -->
+        <img src="profile.jpg" alt="Rojan" class="pic">
+        <h1>ROJAN KATUWAL</h1>
+        <p class="bio">🇳🇵 Video Creator | Folk Dance & Songs | Dubai 🇦🇪</p>
         
-        
-        <!-- ================================================== -->
-        <!-- SECTION 2: VIDEO - हटाउन चाहे यो पूरा Delete गर -->
-        <!-- >>>>>>>>>> DELETE FROM HERE TO REMOVE VIDEO >>>>>>>>>> -->
+        <!-- ===== VIDEO हटाउनु परे यो Delete गर ===== -->
+        <!-- VIDEO START -->
         <div class="video">
-            <!-- Video ID Change गर्नु परे यहाँ Edit गर: jNQXAC9IVRw -->
-            <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/n-DxdfIhuTw" allowfullscreen></iframe>
         </div>
-        <!-- >>>>>>>>>> DELETE TILL HERE TO REMOVE VIDEO >>>>>>>>>> -->
-        <!-- ===== VIDEO SECTION END ===== -->
+        <!-- VIDEO END -->
         
+        <!-- ===== BUTTONS - Link Change गर्न यहाँ ===== -->
+        <a href="https://wa.me/971547983481?text=Namaste%20Rojan%20dai" class="btn btn-whatsapp">
+            💬 WhatsApp Me / Collab
+        </a>
         
-        <!-- ================================================== -->
-        <!-- SECTION 3: STORE - Price/Product Add/Delete/Edit गर यहाँ -->
-        <!-- ================================================== -->
-        <div class="store">
-            <h2 class="store-title">🔥 ROJAN FITNESS STORE</h2>
-            <div class="products">
-                
-                <!-- >>> PRODUCT 1 START - Delete यो Div हटाउन <<< -->
-                <div class="product">
-                    <h3>1 Month Personal Coaching</h3>
-                    <p>WhatsApp Support + Custom Diet + Workout Plan</p>
-                    <!-- Price Change गर्नु परे यहाँ Edit गर -->
-                    <div class="price">AED 99<span class="old-price">AED 299</span></div>
-                    <!-- WhatsApp Number Change गर्नु परे यहाँ Edit गर -->
-                    <a href="https://wa.me/971547983481?text=Namaste%20Rojan%20dai,%20AED%2099%20Coaching%20chahiyo" class="btn">Buy Now</a>
-                </div>
-                <!-- >>> PRODUCT 1 END <<< -->
-                
-                <!-- >>> PRODUCT 2 START - Delete यो Div हटाउन <<< -->
-                <div class="product">
-                    <h3>Basic Workout Plan PDF</h3>
-                    <p>30 Days Home Workout. No Equipment Needed</p>
-                    <!-- Price Change गर्नु परे यहाँ Edit गर -->
-                    <div class="price">AED 29</div>
-                    <a href="https://wa.me/971547983481?text=Namaste%20Rojan%20dai,%20AED%2029%20Workout%20Plan%20chahiyo" class="btn">Buy Now</a>
-                </div>
-                <!-- >>> PRODUCT 2 END <<< -->
-                
-                <!-- >>> PRODUCT 3 START - Delete यो Div हटाउन <<< -->
-                <div class="product">
-                    <h3>7 Day Diet Plan PDF</h3>
-                    <p>Veg & Non-Veg Options. Easy Nepali Food</p>
-                    <!-- Price Change गर्नु परे यहाँ Edit गर -->
-                    <div class="price">AED 49</div>
-                    <a href="https://wa.me/971547983481?text=Namaste%20Rojan%20dai,%20AED%2049%20Diet%20Plan%20chahiyo" class="btn">Buy Now</a>
-                </div>
-                <!-- >>> PRODUCT 3 END <<< -->
-                
-            </div>
-        <!-- ===== STORE SECTION END ===== -->
+        <a href="https://youtube.com/@jhapa22" class="btn btn-youtube">
+            ▶️ YouTube Channel
+        </a>
         
+        <a href="https://tiktok.com/@rojankatuwal99" class="btn btn-tiktok">
+            🎵 TikTok Profile
+        </a>
         
-        <!-- ================================================== -->
-        <!-- SECTION 4: FREE GIFT - Lead Magnet Edit गर यहाँ -->
-        <!-- ================================================== -->
-        <div class="gift">
-            <h3>🎁 FREE GIFT FOR YOU</h3>
-            <p>Get FREE 7 Day Diet Plan PDF worth AED 49. Limited Time!</p>
-            <!-- WhatsApp Message Change गर्नु परे यहाँ Edit गर -->
-            <a href="https://wa.me/971547983481?text=Namaste%20Rojan%20dai,%20FREE%20DIET%20PDF%20pathaidinu" class="gift-btn">Get FREE Plan Now</a>
-        </div>
-        <!-- ===== FREE GIFT SECTION END ===== -->
+        <a href="https://facebook.com/rojankatuwal22" class="btn">
+            📘 Facebook Page
+        </a>
         
-        
-        <!-- ================================================== -->
-        <!-- SECTION 5: CONTACT - Number/Link Change गर यहाँ -->
-        <!-- ================================================== -->
-        <div class="contact">
-            <!-- WhatsApp Number Change गर्नु परे यहाँ Edit गर -->
-            <a href="https://wa.me/971547983481" class="whatsapp">💬 WhatsApp Me</a>
-            
-            <!-- YouTube Link Change गर्नु परे यहाँ Edit गर -->
-            <a href="https://www.youtube.com/@rojanfitness" class="youtube">▶️ YouTube Channel</a>
-        </div>
-        <!-- ===== CONTACT SECTION END ===== -->
-        
+        <p style="margin-top:40px;opacity:0.7;font-size:14px">
+            © 2026 Rojan Katuwal
+        </p>
     </div>
 </body>
 </html>
